@@ -5,41 +5,114 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neue Animation</title>
     <style>
+        @font-face {
+            font-family: 'Halyard Display';
+            src: url('/fonts/Halyard_Display_Black.woff2') format('woff2');
+            font-weight: 900;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Halyard Display';
+            src: url('/fonts/Halyard_Display_ExtraLight_Italic.otf') format('opentype');
+            font-weight: 200;
+            font-style: italic;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Halyard Display';
+            src: url('/fonts/Halyard_Display_Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Stripe';
+            src: url('/fonts/stripe-num1.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         body {
             margin: 0;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: rgb(28, 74, 255);
             transition: background-color 4s;
         }
 
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
         #text {
-            font-size: 400pt;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
+            font-size: 200pt;
+            font-family: 'Halyard Display', sans-serif;
+            font-weight: 700;
+            font-style: normal;
             opacity: 0;
-            color: rgb(0, 0, 0);
+            color: white;
             transition: opacity 2s, color 2s;
+            line-height: 1;
+            margin: 0;
+        }
+
+        #subtitle {
+            font-size: 24pt;
+            font-family: 'Halyard Display', sans-serif;
+            font-weight: 200;
+            font-style: italic;
+            opacity: 0;
+            color: white;
+            transition: opacity 2s, color 2s;
+            margin: 0;
+        }
+
+        #playground {
+            font-size: 36pt;
+            font-family: 'Stripe', sans-serif;
+            opacity: 0;
+            color: white;
+            transition: opacity 2s, color 2s;
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <div id="text">Neue</div>
+    <div class="container">
+        <div id="text">Neue</div>
+        <div id="subtitle">a creative collective</div>
+        <div id="playground">Playground</div>
+    </div>
 
     <script>
         const text = document.getElementById('text');
+        const subtitle = document.getElementById('subtitle');
+        const playground = document.getElementById('playground');
         const body = document.body;
 
         // Wait 1 second before starting animation
         setTimeout(() => {
             // Make text visible
             text.style.opacity = '1';
+            subtitle.style.opacity = '1';
+            playground.style.opacity = '1';
             
             // After text becomes visible, change colors
             setTimeout(() => {
                 text.style.color = 'black';
+                subtitle.style.color = 'black';
+                playground.style.color = 'black';
                 body.style.backgroundColor = 'white';
             }, 2000);
         }, 1000);
