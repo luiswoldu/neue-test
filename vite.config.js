@@ -2,8 +2,14 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   root: '.',
-  publicDir: '.',
+  publicDir: 'public',
   server: {
-    open: '/home.html'
+    open: true,
+    port: 5173
+  },
+  build: {
+    rollupOptions: {
+      input: 'home.html'
+    }
   }
 }) 
