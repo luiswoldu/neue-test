@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neue Animation</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            transition: background-color 4s;
+        }
+
+        #text {
+            font-size: 400pt;
+            font-family: Arial, sans-serif;
+            opacity: 0;
+            color: rgb(0, 0, 0);
+            transition: opacity 2s, color 2s;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">Neue</div>
+
+    <script>
+        const text = document.getElementById('text');
+        const body = document.body;
+
+        // Wait 1 second before starting animation
+        setTimeout(() => {
+            // Make text visible
+            text.style.opacity = '1';
+            
+            // After text becomes visible, change colors
+            setTimeout(() => {
+                text.style.color = 'black';
+                body.style.backgroundColor = 'white';
+            }, 2000);
+        }, 1000);
+    </script>
+</body>
+</html>
